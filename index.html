@@ -1,0 +1,239 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- displays site properly based on user's device -->
+
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="./images/favicon-32x32.png"
+      />
+
+      <title>Article preview component</title>
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+        * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+        }
+        body {
+          background: hsl(210, 46%, 95%);
+          height: 100vh;
+          width: 100vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        div.main {
+          width: 800px;
+          height: 300px;
+          border-radius: 10px;
+          display: flex;
+          box-shadow: 40px 40px 50px -10px hsla(217, 19%, 35%, 0.1);
+        }
+        div.main img {
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+          width: 100%;
+          height: 100%;
+        }
+        div.inner {
+          padding: 40px;
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+          background: white;
+        }
+        h1 {
+          font-family: manrope;
+          font-size: 25px;
+          color: hsl(217, 19%, 35%);
+        }
+        p {
+          margin-top: 10px;
+          font-size: 12px;
+          font-family: manrope;
+          color: hsl(214, 17%, 51%);
+        }
+        div.botom {
+          width: 300px;
+          display: flex;
+          align-items: center;
+        }
+        div.botom img {
+          width: 40px;
+          border-radius: 50%;
+        }
+        div.last {
+          margin-top: 20px;
+          display: flex;
+          position: relative;
+          justify-content: space-between;
+          align-items: center;
+        }
+        div.sharesvg img.share {
+          width: 20px;
+          height: 20px;
+        }
+        /* .sharesvg:hover {
+          display: block;
+          cursor: pointer;
+          background: hsl(217, 19%, 35%);
+        }
+        .sharesvg img.share:hover{
+          filter: brightness(0) invert(100); 
+          
+        }*/
+        div.sharesvg {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+        div.details {
+          margin-left: 10px;
+        }
+        h2 {
+          font-size: 13px;
+          color: hsl(217, 19%, 35%);
+          font-family: manrope;
+        }
+        h3 {
+          font-size: 12px;
+          color: hsl(212, 23%, 69%);
+          font-weight: 500;
+          font-family: manrope;
+        }
+        div.hover{
+          width: 280px;
+          height: 60px;
+          position: absolute;
+          top: -95px;
+          right: -120px;
+          border-radius: 15px;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          background: hsl(217, 19%, 35%);
+          display: none;
+          transition: all 2s;
+          padding: 0px 30px;
+        }
+
+        div.hover::after{
+          content: '';
+          display: block;
+          position: absolute;
+          top:40px;
+          transform: rotate(45deg);
+          background: hsl(217, 19%, 35%);
+          width: 30px;
+          height: 30px;
+        }
+        div.hover h1{
+          color: hsl(210, 46%, 95%);
+          text-transform: uppercase;
+          font-family: manrope;
+          font-weight: 300;
+          font-size: 12px;
+          letter-spacing: 5px;
+        }
+        div.hover img{
+          width: 20px;
+          height: auto;
+          z-index: 1;
+          border-radius: 0%;
+
+        }
+
+        @media (max-width:550px) {
+          div.main{
+            flex-direction: column;
+            width: 80vw;
+            height: 570px;
+
+          }
+          div.inner{
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 10px;
+          }
+          div.main img{
+            height: 50%;
+            object-fit: cover;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 0px;
+          }
+          div.botom img{
+            border-radius: 50%;
+          }
+          div.sharesvg{
+            background: hsl(210, 46%, 95%);
+          }
+        }
+      </style>
+    </head>
+
+    <body>
+      <main>
+        <div class="main">
+          <img src="images/drawers.jpg" alt="drawers-img" />
+          <div class="inner">
+            <h1>
+              Shift the overall look and feel by adding these wonderful touches to
+              furniture in your home
+            </h1>
+
+            <p>
+              Ever been in a room and felt like something was missing? Perhaps it
+              felt slightly bare and uninviting. I’ve got some simple tips to help
+              you make any room feel complete.
+            </p>
+            <div class="last">
+              <div class="botom">
+                <img src="images/avatar-michelle.jpg" alt="Michelle-img" />
+                <div class="details">
+                  <h2>Michelle Appleton</h2>
+                  <h3>28 Jun 2020</h3>
+                </div>
+              </div>
+
+              <div class="sharesvg">
+                <img src="images/icon-share.svg" alt="share-svg" class="share" />
+              </div>
+              <div class="hover">
+                <h1>share</h1>
+                <img src="images/icon-facebook.svg" alt="fb-svg" />
+                <img src="images/icon-twitter.svg " alt="tw-svg" />
+                <img src="images/icon-pinterest.svg" alt="pt-svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <script>
+        let show=document.querySelector('div.hover');
+        let icon = document.querySelector('img.share');
+        let icon_box=document.querySelector('div.sharesvg');
+
+        icon_box.addEventListener('mouseenter',function(){
+          show.style.display='flex';
+          icon_box.style.transition='all .1s';
+          icon_box.style.background='hsl(217, 19%, 35%)';
+          icon.style.filter='brightness(0) invert(100)';
+          icon_box.style.cursor='pointer';
+        });
+        
+        icon_box.addEventListener('mouseleave',function(){
+          show.style.display='none';
+          icon.style.filter='none';
+          icon_box.style.background='white';
+        });
+        
+      </script>
+    </body>
+  </html>
